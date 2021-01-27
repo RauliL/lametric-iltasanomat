@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
         .map((entry, index) => ({
           index,
           text: `${index + 1}. ${entry.title}`,
-          icon: 'ilta-sanomat'
+          icon: 'iltasanomat'
         }))
     });
   });
