@@ -1,0 +1,37 @@
+{
+  "name": "lametric-iltasanomat",
+  "author": "Rauli Laine <rauli.laine@iki.fi>",
+  "version": "1.0.0",
+  "description": "Backend for LaMetric Ilta-Sanomat app",
+  "keywords": [
+    "lametric",
+    "microservice",
+    "news"
+  ],
+  "license": "Unlicense",
+  "repository": "https://github.com/RauliL/lametric-iltasanomat.git",
+  "homepage": "https://github.com/RauliL/lametric-iltasanomat",
+  "bugs": {
+    "url": "https://github.com/RauliL/lametric-iltasanomat/issues"
+  },
+  "main": "./index.js",
+  "bin": {
+    "lametric-iltasanomat": "./bin/lametric-iltasanomat"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "start": "./bin/lametric-iltasanomat",
+    "start:dev": "nodemon ./bin/lametric-iltasanomat"
+  },
+  "dependencies": {
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "normalize-port": "^1.0.0",
+    "parse-rss": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
