@@ -1,16 +1,27 @@
 const express = require('express');
 const { format } = require('lametric-rss-formatter');
 
-const FEED_URL = 'https://www.is.fi/rss/tuoreimmat.xml';
+const feeds = require('./feeds.json');
 
 const app = express();
 
 module.exports = app;
 
 app.get('/', (req, res) => {
-  const { max } = req.query;
+  const { feed, max } = req.query;
+  const url = feeds[feed || 'Tuoreimmat uutisotsikot'];
 
-  format({ url: FEED_URL, icon: 'iltasnomat', max })
+  if (!url) {
+    res.send({
+      frames: [{
+        text: 'Invalid feed',
+        icon: 'stop'
+      }]
+    });
+    return;
+  }
+
+  format({ url, max, icon: 'iltasnomat' })
     .then(result => res.send(result))
     .catch(() => res.sendStatus(500));
 });
