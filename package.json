@@ -28,8 +28,8 @@
   "dependencies": {
     "debug": "^4.3.1",
     "express": "^4.17.1",
-    "normalize-port": "^1.0.0",
-    "parse-rss": "^1.0.3"
+    "lametric-rss-formatter": "^1.0.0",
+    "normalize-port": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
